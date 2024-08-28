@@ -15,8 +15,10 @@ Flask Image Generator is a Python application that leverages the Replicate API t
 ### Clone the Repository
 First, clone the repository to your local machine:
 
-git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPO_NAME].git
-cd [YOUR_REPO_NAME]
+```
+git clone https://github.com/ashakoen/replicate-image-gen-python.git
+cd replicate-image-gen-python
+```
 
 ### Python Environment
 Ensure you have Python 3.10 or later installed on your system.
@@ -24,8 +26,10 @@ Ensure you have Python 3.10 or later installed on your system.
 ### Install Dependencies
 Either install with pip (assuming a virtual environment is set up):
 
+```
 pip install -r requirements.txt
- 
+ ```
+
 Or if using Docker, you don't need to manually install dependencies; the Dockerfile will handle it.
 
 ## Usage
@@ -34,11 +38,14 @@ Or if using Docker, you don't need to manually install dependencies; the Dockerf
 
 Build the Docker image:
 
+```
 docker build -t flask-image-generator .
+```
 
 Run the Docker container with the `.env` file:
-
+```
 docker run -p 8080:8080 --env-file .env flask-image-generator
+```
 
 ### Interacting with the API
 
@@ -54,22 +61,23 @@ After starting the container, you can interact with the API. The service provide
   - `prompt`: A string representing the text input for generating images.
 
 Example usage with `curl`:
-
+```
 curl -X POST http://localhost:8080/generate-images \
 -H "x-api-key: your_header_api_key_here" \
 -H "Content-Type: application/json" \
--d '{"prompt": "A realistic, natural photo of a woman gently applying moisturizer in front of a bathroom mirror. The soft light highlights her serene expression as she takes a moment for self-care. Attention to detail in her facial expression and the soothing setting. Shot with a Fuji X-T1 in the style of Sarah Lucas."}'
+-d '{"prompt": "A cute photo of a dog"}'
+```
 
 ### Docker Compose
 
 You can use Docker Compose as well for managing the container:
-
+```
 docker-compose up --build
-
+```
 ## Configuration
 
 The application uses a `.env` file to configure the parameters used by the Replicate API. See below for the complete list of configurable environment variables:
-
+```
 - REPLICATE_API_KEY: Your API key for Replicate.
 - MODEL: The model to use (e.g., "dev").
 - NUM_OUTPUTS: The number of output images (default: 1).
@@ -82,7 +90,7 @@ The application uses a `.env` file to configure the parameters used by the Repli
 - ASPECT_RATIO: Aspect ratio of output image (e.g., "9:16").
 - LORA: The LoRA model to apply during image generation.
 - X_API_KEY: The key required for accessing the API.
-
+```
 ### Google Cloud Run Integration
 
 This repository can be easily integrated with Google Cloud Run for continuous deployment:
