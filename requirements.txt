@@ -1,0 +1,5 @@
+Flask==2.3.3
+flask-cors==3.0.10
+loguru==0.7.0
+replicate>=0.6.2
+python-dotenv==1.0.0
