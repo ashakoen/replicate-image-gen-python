@@ -117,7 +117,7 @@ def generate_images_route():
         image_generator = ImageGenerator(REPLICATE_API_KEY)
         
         output = image_generator.generate_images(prompt)
-        return jsonify({'imageUrls': output})
+        return jsonify({'imageUrls': output, 'prompt': prompt})
 
     except Exception as e:
         error_message = f"Error during image generation: {str(e)}"
