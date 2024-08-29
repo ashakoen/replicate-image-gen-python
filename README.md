@@ -1,10 +1,10 @@
-# Flask Image Generator
+# Replicate Image Gen
 
-Flask Image Generator is a Python application that leverages the Replicate API to generate images based on text prompts. This tool is particularly useful for developers and AI enthusiasts who want to quickly prototype image generation features without needing to build models from scratch.
+Replicate Image Gen is a Python application that leverages the Replicate API to generate images using the FLUX.1 models based on text prompts. It's the backend of a bigger app I'm building to interact with the Replicate APIs.
 
 ## Features
 
-- Generates images from text prompts using pre-configured models.
+- Generates images from text prompts using FLUX.1 models and LoRAs.
 - Wide customization with environment variables for model parameters.
 - Secure API access with header-based authentication (`x-api-key`).
 - Designed for deployment on Google Cloud Run with Docker support.
